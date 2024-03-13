@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- These two lines are HTML `<meta>` tags commonly found in the `<head>` section of an HTML document. Let's break down each one:
+
+1. `<meta charset="UTF-8">`:
+   - This meta tag specifies the character encoding for the document. In this case, it's set to "UTF-8", which stands for Unicode Transformation Format 8-bit. UTF-8 is a character encoding capable of encoding all possible characters in Unicode.
+   - Using UTF-8 ensures that your document can properly display characters from a wide range of languages and symbols, making your web page more internationally friendly.
+
+2. `<meta name="viewport" content="width=device-width, initial-scale=1.0">`:
+   - This meta tag is used to control the layout and scaling of the webpage on different devices.
+   - `name="viewport"` indicates that this meta tag is related to the viewport settings.
+   - `content="width=device-width, initial-scale=1.0"`:
+     - `width=device-width`: This sets the width of the viewport to the width of the device's screen. This ensures that the width of the webpage matches the width of the device, allowing it to adapt to different screen sizes.
+     - `initial-scale=1.0`: This sets the initial zoom level when the webpage is first loaded. A value of `1.0` means that the webpage is initially displayed at its normal size without any zooming.
+  
+These meta tags are essential for ensuring that your webpage is displayed correctly across different devices and browsers, and that the text content is encoded and rendered properly. -->
+    <title>Password Keeper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">Password Keeper</div>
+      <ul class="navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <!--      -->
+
+    <!-- another website -->
+
+    <div class="another-website">
+      <p>
+        <strong>Use our another website to generate strong passwords:</strong>
+      </p>
+      <a href="https://passwordgenerotereact.netlify.app/" target="_blank"
+        >Strong Password Generator</a
+      >
+    </div>
+    <!-- _self: Load the URL into the same browsing context as the current one. This is the default behavior.
+_blank: Load the URL into a new browsing context. This is usually a tab, but users can configure browsers to use new windows instead. -->
+
+    <!--  -->
+
+    <!-- dynamic phrase -->
+    <div id="password-reminder" class="centered-content">
+      <!-- This is where the phrase will be dynamically written -->
+    </div>
+    <!--  -->
+
+    <!--  User Details-->
+    <div class="centered-content">
+      <div id="photo-container">
+        <div id="photo-preview"></div>
+        <label for="photo-input" id="file-label" class="rounded-image"></label>
+        <input
+          class="rounded-image"
+          type="file"
+          id="photo-input"
+          accept=".jpeg, .jpg"
+          /> 
+          <!-- to select all type of image use accept="image/*" -->
+         
+      </div>
+      <ul>
+        <li>
+          Name:
+          <input
+            id="nameInput"
+            placeholder="Enter your Name"
+            type="text"
+            oninput="storeUserDetails()"
+          />
+        </li>
+        <li>
+          Profession:
+          <input
+            id="professionInput"
+            placeholder="Enter your profession"
+            type="text"
+            oninput="storeUserDetails()"
+          />
+        </li>
+        <li>
+          Address:
+          <input
+            id="addressInput"
+            placeholder="Enter your address"
+            type="text"
+            oninput="storeUserDetails()"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <!--  -->
+
+    <!-- search password  -->
+    <div>
+      
+      <div class="search-wrapper">
+        Search:
+        <input id="search" type="text" placeholder="Search your password" />
+      </div>
+      <ul id="passwordcount"></ul>
+    </div>
+
+    <!--  -->
+
+    <!-- password input feild -->
+
+    <form id="password-form">
+      <p>Website: <input id="website" placeholder="Website" type="text" required /></p>
+      <p>Title: <input id="title" placeholder="User Id" type="text"  required/></p>
+      <p>
+        Password: <input id="password" placeholder="password" type="text"  required/>
+      </p>
+      <button type="submit">Add</button>
+    </form>
+    <!--  -->
+
+    <!-- insert password on screen -->
+
+    <ul id="allpass">
+      All Passwords
+    </ul>
+
+    <!--  -->
+
+    <!-- subscription plan  -->
+
+    <section class="section gallery">
+      <div class="container">
+        <hr />
+
+        <p class="subscription-text">
+          <em>
+            "Unlock the power of effortless password management with our
+            subscription service. Never struggle to remember passwords again –
+            access all your passwords with just a touch of your fingerprint.
+            Subscribe today to enjoy seamless password management, enhanced
+            security, and peace of mind.<strong>
+              Say goodbye to the hassle of forgotten passwords and join our
+              community of satisfied subscribers</strong
+            >. Your digital security is our priority – subscribe now to
+            experience the convenience and confidence of secure password
+            management at your fingertips."
+          </em>
+        </p>
+        <p class="centered-content">Remember one Keep All</p>
+        <h2 class="section-title centered-content blink">
+          Choose Your Membership
+        </h2>
+
+        <ul class="gallery-list">
+          <!--silver membership  -->
+          <li class="gallery-item">
+            <figure
+              class="item-banner img-holder"
+              style="--width: 700; --height: 300"
+            >
+              <img
+                src="silver.jpeg"
+                width="700"
+                height="300"
+                loading="lazy"
+                alt="Silver Membership"
+                class="img-cover"
+              />
+            </figure>
+            <div class="membership-details">
+              <h3 class="membership-title">Silver Membership(Solo plan)</h3>
+              <p class="membership-description">
+                Get 50-100 passwords/month for $1.
+              </p>
+            </div>
+          </li>
+          <!--  -->
+
+          <!--gold membership  -->
+          <li class="gallery-item">
+            <figure
+              class="item-banner img-holder"
+              style="--width: 700; --height: 300"
+            >
+              <img
+                src="gold.jpeg"
+                width="700"
+                height="300"
+                loading="lazy"
+                alt="Gold Membership"
+                class="img-cover"
+              />
+            </figure>
+            <div class="membership-details">
+              <h3 class="membership-title">Gold Membership(Multi-user plan)</h3>
+              <p class="membership-description">
+                Get 100-500 passwords/month for $5.
+              </p>
+            </div>
+          </li>
+          <!--  -->
+
+          <!--platinum membership  -->
+          <li class="gallery-item">
+            <figure
+              class="item-banner img-holder"
+              style="--width: 700; --height: 300"
+            >
+              <img
+                src="platinum.jpeg"
+                width="700"
+                height="300"
+                loading="lazy"
+                alt="Platinum Membership"
+                class="img-cover"
+              />
+            </figure>
+            <div class="membership-details">
+              <h3 class="membership-title">Platinum Membership(Team plan)</h3>
+              <p class="membership-description">
+                Get unlimited passwords for $10.
+              </p>
+            </div>
+          </li>
+          <!-- -->
+        </ul>
+      </div>
+    </section>
+
+    <!--footer section  -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!--first footer list  -->
+          <ul class="footer-list">
+            <li>
+              <p class="footer-link">About Us</p>
+            </li>
+            <li>
+              <p class="footer-link">Features</p>
+            </li>
+            <li>
+              <p class="footer-link">News</p>
+            </li>
+            <li>
+              <p class="footer-link">Menu</p>
+            </li>
+          </ul>
+
+          <!--second footer list  -->
+          <ul class="footer-list">
+            <li>
+              <p class="footer-link">Why Company</p>
+            </li>
+            <li>
+              <p class="footer-link">Partner With Us</p>
+            </li>
+            <li>
+              <p class="footer-link">FAQ</p>
+            </li>
+            <li>
+              <p class="footer-link">Blog</p>
+            </li>
+          </ul>
+
+          <!--third footer list -->
+          <ul class="footer-list">
+            <li>
+              <p class="footer-link">Account</p>
+            </li>
+            <li>
+              <p class="footer-link">Support Center</p>
+            </li>
+            <li>
+              <p class="footer-link">Feedback</p>
+            </li>
+            <li>
+              <p class="footer-link">Contact Us</p>
+            </li>
+          </ul>
+
+          <!--question or feedback section  -->
+          <div class="footer-list">
+            <p class="footer-text">
+              Question or feedback? We’d love to hear from you.
+            </p>
+            <form action="" class="input-wrapper">
+              <input
+                type="email"
+                name="email_address"
+                placeholder="Email Address"
+                autocomplete="off"
+                class="input-field"
+                required
+              />
+              <input
+                type="text"
+                name="message"
+                placeholder="Your Message"
+                class="input-field"
+                required
+              />
+              <button type="submit" id="input-btn" aria-label="send a message">
+                <span>Send</span>
+                <ion-icon
+                  name="paper-plane-outline"
+                  aria-hidden="true"
+                ></ion-icon>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!--footer bottom  copyright  -->
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            Copyright 2023. Made by
+            <a href="https://github.com/revivesanjeev"  target="_blank"  class="copyright-link">
+              SANJEEV</a
+            >
+          </p>
+
+
+           <!-- t&c privacy policy -->
+          <ul class="footer-bottom-list">
+            <li>
+              <a href="#" class="footer-bottom-link">Terms and Condition</a>
+            </li>
+            <li>
+              <a href="#" class="footer-bottom-link">Privacy and Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!--javascript and axios link  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

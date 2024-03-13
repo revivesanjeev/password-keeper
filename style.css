@@ -1,0 +1,371 @@
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  /* collapsing the border,width=0 means margin bottom and padding top would be same line */
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  /* The default value for the flex-direction property, when you use display: flex;, is row.  */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+
+  /* the space is distributed evenly between the flex items, pushing the first item to the start edge and the last item to the end edge of the container. This creates equal space between the items. */
+  align-items: center;
+  /* In a flex container, there are two main axes: the main axis and the cross axis. The main axis is determined by the flex-direction property (which defaults to row), and the cross axis is perpendicular to it.
+By setting align-items: center;, you're aligning the flex items vertically along the cross-axis, meaning they will be centered vertically within the flex container. */
+
+  padding: 20px;
+  background-color: #ff0404;
+  color: #fff;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-nav li a:hover {
+  color: #ffd903;
+}
+
+/* Another Website Styles */
+.another-website {
+  text-align: right;
+  margin-right: 40px;
+  text-shadow: #666262;
+}
+
+/* General Styles */
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+
+/* Password Reminder Styles */
+#password-reminder {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  height: 20px;
+  animation: changeStyle 3s infinite alternate;
+}
+/* #password-reminder element over the duration of 3s, with each color change happening approximately every 0.6 seconds (since 3s is divided into 5 keyframes). */
+
+/* To define keyframes, you use the @keyframes at-rule followed by a name for the animation. Inside the @keyframes block, you define various percentages (or from/to) that represent different stages of the animation. Each percentage represents a point in time during the animation. */
+@keyframes changeStyle {
+  0% {
+    font-weight: normal;
+    color: #333;
+  }
+  25% {
+    font-weight: bold;
+    color: #ff0000;
+  }
+  50% {
+    font-weight: normal;
+    color: #00ff00;
+  }
+  75% {
+    font-weight: bold;
+    color: #0000ff;
+  }
+  100% {
+    font-weight: normal;
+    color: #333333;
+  }
+}
+
+/* user details  */
+
+.centered-content {
+  text-align: center;
+  position: relative;
+  /* top: 100px; */
+  /* when you set margin-top on an element, it creates space between the top edge of that element and the content above it, based on its containing block. If the containing block is the root element, then margin-top affects the spacing between the element and the top edge of the viewport (the browser window). If the containing block is its own parent element, then margin-top affects the spacing between the element and its parent's top edge. */
+  margin-top: 10px;
+}
+
+#photo-container {
+  display: flex;
+  /* flex-item will be div and label by default it is row change to column */
+  flex-direction: column;
+  align-items: center;
+}
+
+#photo-preview {
+  width: 150px;
+  height: 180px;
+  border: 2px solid #10fd08;
+  border-radius: 20px;
+  background-size: cover;
+  margin-bottom: 10px; /* Add margin bottom to create space between image and file input */
+    box-shadow: 0 4px 8px rgba(5, 235, 36, 0.5);
+     /* The 0 specifies that there is no horizontal offset for the shadow.
+The 4px specifies the vertical offset for the shadow.
+The 8px specifies the blur radius of the shadow. */
+   
+}
+
+#photo-input {
+  margin-top: 0px;
+  margin-left: 140px; 
+}
+
+
+
+/* Search Input Styles */
+#search {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-wrapper {
+  position: absolute;
+  top: 300px;
+  left: 40px;
+}
+#passwordcount {
+  position: absolute;
+  top: 310px;
+  left: 40px;
+}
+
+/* Form Styles */
+form {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+input[type="text"],
+ input[type="email"]{
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(13, 230, 5, 0.5);
+}
+
+
+button {
+  padding: 8px 16px;
+  background-color: #6ccf70;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #136d17;
+}
+
+/* Password Entry Styles */
+.delete-btn,
+.edit-btn {
+  padding: 4px 8px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #f84437;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #36a8f4;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #882525;
+}
+
+.edit-btn:hover {
+  background-color: #2f4dd3;
+}
+
+
+div img {
+  height: 200px; /*  height=200px */
+  width: auto; /* Adjust width automatically to maintain aspect ratio */
+}
+
+/* Subscription Styles */
+.subscription-text,
+#allpass {
+  margin-left: 40px;
+}
+
+/* Gallery Styles */
+.gallery-list {
+  display: flex;
+  
+  /* In CSS, the justify-content property is used in flexbox layouts to define how the space within a flex container is distributed along the main axis. The space-between value of the justify-content property specifically aligns the flex items such that there is equal space between them, while the first and last items are flush with the start and end edges of the container, respectively. */
+  justify-content: space-between;
+  list-style-type: none;
+  /* For <ul> (unordered lists), the list-style-type default value is disc, which renders a filled circle as the bullet point for each list item.
+For <ol> (ordered lists), the list-style-type default value is decimal, which renders decimal numbers (1, 2, 3, ...) as the numbering style for each list item */
+  padding: 0;
+}
+
+
+
+.membership-details {
+  text-align: center;
+}
+
+.membership-title {
+  margin-top: 3px;
+}
+.membership-description {
+  margin-left: 20px;
+  margin-top: 3px;
+}
+.membership-title:hover,
+.membership-description:hover {
+  color: #ffd700;
+   cursor: pointer;
+}
+
+
+
+.gallery-item {
+  width: calc(33.33% - 20px);
+  /* 33.33% specifies that each .gallery-item element should take up 33.33% of the width of its containing element. This means that if there are three .gallery-item elements side by side within their container, they would each occupy one-third of the container's width.
+- 20px subtracts 20px from the calculated width. This indicates that each .gallery-item should have a margin of 20px on both the left and right sides. This is done to create space between the .gallery-item elements. */
+  margin-bottom: 20px;
+  text-align: center;
+  
+}
+
+.item-banner {
+  margin: 0 auto;
+
+  /* margin-top and margin-bottom are set to 0, meaning no vertical margin.
+margin-left and margin-right are set to auto, indicating that the browser should automatically calculate and distribute the available horizontal space evenly on the left and right sides of the element. */
+}
+
+/* Apply the blink animation to the section title */
+.blink {
+  animation: blinkAnimation 1s infinite;
+}
+
+/* Define the blink animation */
+@keyframes blinkAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img-cover {
+   /* any changes to the transform property of an element will be animated smoothly over a duration of 0.4 seconds, with an easing effect that starts slow, accelerates, and then slows down again. */
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+  border: 2px solid #05f887;
+ box-shadow: 0 4px 8px rgba(8, 252, 69, 0.5);
+  cursor: pointer;
+}
+
+.img-cover:hover {
+  transform: scale(0.9);
+}
+
+/* Footer Styles */
+/* 2 div element bottom and top  arrange in a column*/
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+.footer-link:hover {
+  text-decoration: underline;
+  color: #ffd700;
+   cursor: pointer;
+}
+
+/* 3 ul element and 1 div  arrange in a row*/
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.footer-list {
+  flex: 1;
+  margin-right: 60px;
+  margin-left: 60px;
+/* each of the four children elements with the class .footer-list will expand to fill all available space along the main axis (usually horizontally) of the parent container. They will share the available space equally, and any remaining space after accounting for their margins will be distributed among them according to the flex: 1; rule. The margin-right: 60px; and margin-left: 60px; */
+
+/* the total distance between them will be 60px (margin-right of the first element) + 60px (margin-left of the second element) = 120px. This creates a total spacing of 120px between the two elements. */
+
+}
+/* footer bottom  copyright */
+.footer-bottom {
+  text-align: center;
+}
+
+/* footer bottom list  */
+.footer-bottom-list {
+  margin-top: 10px;
+}
+
+
+/* <li> element will be displayed vertically, creating a column of links within the <ul> element. This is the default behavior of list items in HTML, and it helps in organizing and structuring content within a list format */
+
+
+
+
+
+.footer-bottom-list li {
+  display: inline;
+  margin: 20px 10px;
+/* margin: 3px 4px;
+In this case:
+
+The top and bottom margins would be 3px.
+The left and right margins would be 4px. */
+
+
+
+  /* top-right-bottom-left */
+}
